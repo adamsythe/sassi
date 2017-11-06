@@ -1,0 +1,14 @@
+s="fish[\"image\"] = require(‘../assets/fish/";
+ss="’);"
+
+for f in ./*;
+
+ do
+ f=${f:2}
+SUBSTRING="${f//[!0-9]/}"
+
+echo case $SUBSTRING: >> ../code.txt
+echo   $s$f$ss >> ../code.txt;    
+echo "break;" >> ../code.txt
+done
+
